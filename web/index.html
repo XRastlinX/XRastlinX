@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XRastlinX Mark 1 Attractor Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">XRastlinX computational front end</p>
+        <h1>Mark 1 Universal Attractor Explorer</h1>
+        <p class="hero-copy">
+          Explore the speculative <strong>H = π/9</strong> framework as live,
+          reproducible arithmetic. The dashboard keeps claims separate from checks:
+          it computes values, compares targets, and refuses unsupported physics
+          authority when numbers do not match.
+        </p>
+      </section>
+
+      <section class="control-card" aria-labelledby="controls-title">
+        <div>
+          <h2 id="controls-title">Attractor controls</h2>
+          <p>
+            Adjust <code>H</code> to see how the proposed fine-structure,
+            shell-closure, and helix probes respond.
+          </p>
+        </div>
+        <label class="input-group">
+          <span>H value</span>
+          <input id="h-input" type="number" step="0.000000001" min="0.000001" value="0.3490658504" />
+        </label>
+        <button id="reset-button" type="button">Reset to π/9</button>
+      </section>
+
+      <section class="metric-grid" aria-label="Attractor summary metrics">
+        <article class="metric-card">
+          <span>Actualized structure</span>
+          <strong id="actualized-value">—</strong>
+        </article>
+        <article class="metric-card">
+          <span>Probability potential</span>
+          <strong id="potential-value">—</strong>
+        </article>
+        <article class="metric-card">
+          <span>Ωc comparison</span>
+          <strong id="omega-value">—</strong>
+        </article>
+        <article class="metric-card">
+          <span>Reciprocal scale</span>
+          <strong id="reciprocal-value">—</strong>
+        </article>
+      </section>
+
+      <section class="panel" aria-labelledby="fine-structure-title">
+        <div class="panel-heading">
+          <h2 id="fine-structure-title">Fine-structure probes</h2>
+          <p>Reference targets are comparison constants; they are not derived by this model.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Expression</th>
+                <th>Value</th>
+                <th>Target</th>
+                <th>Relative error</th>
+                <th>Status</th>
+                <th>Authority</th>
+              </tr>
+            </thead>
+            <tbody id="fine-structure-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel two-column" aria-labelledby="geometry-title">
+        <div>
+          <div class="panel-heading">
+            <h2 id="geometry-title">Geometry probes</h2>
+            <p>Twin-prime centers and reciprocal-H checks from the model notes.</p>
+          </div>
+          <div id="shell-cards" class="shell-grid"></div>
+        </div>
+        <article class="helix-card">
+          <span>Biological geometry probe</span>
+          <h3>α-helix reciprocal-H comparison</h3>
+          <p id="helix-summary">—</p>
+          <div class="meter" aria-hidden="true">
+            <div id="helix-meter"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="note-card">
+        <h2>Interpretation note</h2>
+        <p>
+          This interface is an exploratory scaffold. Status labels preserve the
+          boundary between simulation math and empirical authority: mismatched
+          bridge formulas are refused, and no speculative relation is labeled
+          proven physics.
+        </p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
