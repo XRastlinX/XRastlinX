@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xrastlinx"
+version = "0.1.0"
+description = "Computational probes for the speculative Mark 1 Universal Attractor framework."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+xrastlinx-mark1 = "xrastlinx.mark1:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
